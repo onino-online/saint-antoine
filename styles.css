@@ -87,10 +87,10 @@ h1 {
 
 @media (max-width: 576px) {
   .message-from {
-    font-size: 15px;
+    font-size: 20px;
   }
 
   .message-to {
-    font-size: 13px;
+    font-size: 18px;
   }
 }
