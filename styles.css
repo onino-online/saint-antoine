@@ -1,0 +1,79 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background: linear-gradient(to bottom, #87ceeb, #b0e0e6);
+  position: relative;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Couvre toute la largeur de la fenêtre */
+  height: 100vh; /* Couvre toute la hauteur de la fenêtre */
+  z-index: -1; /* Place le canvas derrière les autres éléments */
+}
+
+h1 {
+  color: #333;
+  font-size: 2em;
+  text-align: center;
+}
+.container {
+  max-width: 900px;
+  padding: 20px;
+  /* text-align: center; */
+}
+
+.parchment {
+  max-width: 900px;
+  padding: 40px;
+  background: linear-gradient(to bottom, #f0e6c8, #d8c7a3);
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.15) inset;
+  font-family: "Georgia", serif;
+  color: #5b4636;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+/* Ajout d'un effet de bord déchiré en haut et en bas */
+.parchment::before,
+.parchment::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background: inherit;
+  left: 0;
+}
+
+.parchment::before {
+  top: -10px;
+  border-radius: 50% 50% 0 0;
+  box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.1) inset;
+}
+
+.parchment::after {
+  bottom: -10px;
+  border-radius: 0 0 50% 50%;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1) inset;
+}
+
+.message-to {
+  font-family: "Borel", cursive;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 26px;
+}
+
+.message-from {
+  font-family: "Leckerli One", cursive;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 30px;
+}

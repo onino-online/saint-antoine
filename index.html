@@ -4,31 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Saint Antoine</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        margin: 0;
-        background-color: #f5f5f5;
-      }
-      h1 {
-        color: #333;
-        font-size: 2em;
-        text-align: center;
-      }
-      .container {
-        max-width: 600px;
-        padding: 20px;
-        text-align: center;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Borel&family=Itim&family=Knewave&family=Press+Start+2P&family=Rubik+Wet+Paint&family=Viga&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Borel&family=Itim&family=Knewave&family=Leckerli+One&family=Press+Start+2P&family=Rubik+Wet+Paint&family=Viga&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
-      <div class="message-to">
+      <div class="message-to parchment">
         <p>Bonjour Antoine,</p>
         <p>j’ai une pensée à te partager !</p>
         <p>
@@ -60,35 +57,21 @@
           l'essentiel :)
         </p>
         <p>Dès que tu as le temps, n'hésite pas à me faire un retour.</p>
-        <p>
-          Toi au moins tu m'as répondu contrairement à beaucoup d'autres. Et
-          contrairement à beaucoup d'autres, je ne te regarde pas de haut. Je
-          regarde pas mal de gens de haut parce que je les trouve débiles...
-          Mais pas toi.
-        </p>
+        <p>Toi au moins tu m'as répondu contrairement à beaucoup d'autres.</p>
         <p>
           Alors stp, si tu as un brin d'humour et de la suite dans les idées,
-          réponds par mail ! Je te partagerai un ou deux contacts qui te
-          plairont, des gens bien sous tous rapports. Moi... il est trop tard
-          mon âme est foutue de chez foutue lol
+          réponds par mail !
         </p>
-      </div>
-
-      <div class="message-from">
-        <p>Salut Antoine,</p>
         <p>
-          Oublions ces histoires de contacts et d'âme foutue. Je procède
-          actuellement à une cure de désintoxication sévère. Et par sévère, je
-          ne vais pas te donner les détails mais à tout moment ma mère est prête
-          pour m'emmener aux urgences. J'ai assez confiance en moi, mais les
-          mois qui vont venir vont être une épreuve difficile. Surtout les deux
-          prochaines semaines.
+          Je procède actuellement à une cure de désintoxication sévère. Et par
+          sévère, je ne vais pas te donner les détails mais à tout moment ma
+          mère est prête pour m'emmener aux urgences. J'ai assez confiance en
+          moi, mais les mois qui vont venir vont être une épreuve difficile.
+          Surtout les deux prochaines semaines.
         </p>
         <p>
           Ça me ferait du bien d'échanger un peu avec quelqu'un, et à part mes
-          parents, mes sœurs et mon meilleur ami j'ai personne. Sauf que mon
-          meilleur pote a des gros soucis à régler et ma famille est gentille
-          mais mes conversations avec eux sont un peu chiantes...
+          parents, mes sœurs et mon meilleur ami athé j'ai personne.
         </p>
         <p>Tu es toujours prof d'histoire ? Que se passe comment ?</p>
         <p>
@@ -99,7 +82,7 @@
         <p>Merci à très vite<br />Seb</p>
       </div>
 
-      <div class="message-to">
+      <div class="message-from parchment">
         <p>Salut Sébastien,</p>
         <p>
           Tu as beaucoup de courage de t'être lancé dans cette cure. Désolé de
@@ -129,7 +112,7 @@
         </p>
       </div>
 
-      <div class="message-from">
+      <div class="message-to parchment">
         <p>Hey !</p>
         <p>
           Soyons honnête: je me lance dans cette cure car je n'ai vraiment pas
@@ -161,11 +144,11 @@
         <p>A+</p>
       </div>
 
-      <div class="message-from">
+      <div class="message-to parchment">
         <p>Saut Tonio,</p>
         <p>
-          Désolé de te déranger mais j'ai une question un peu étrange à te
-          demander. Je te crois quand tu me dis que tu pries pour moi et
+          Désolé de te déranger encore mais j'ai une question un peu étrange à
+          te demander. Je te crois quand tu me dis que tu pries pour moi et
           franchement, ça m'aide énormément, rien que de savoir que tu penses à
           moi.
         </p>
@@ -196,7 +179,7 @@
         <p>La bise<br />Séb</p>
       </div>
 
-      <div class="message-to">
+      <div class="message-from parchment">
         <p>Cher Séb,</p>
         <p>Tu poses vraiment la meilleure des questions : comment prier ?</p>
         <p>
@@ -283,7 +266,7 @@
         <p>Antoine</p>
       </div>
 
-      <div class="message-from">
+      <div class="message-to parchment">
         <p>Salut Antoine,</p>
         <p>
           Je ne suis pas impressionné, je suis complètement ébahi. Non seulement
@@ -310,12 +293,86 @@
         </p>
       </div>
 
-      <div class="message-to">
+      <div class="message-from parchment">
         <p>
           Bien-sûr ! Tu peux compter sur moi, je priorise ainsi ! Tu es sur la
           bonne voie car tu sais déjà clairement ce qu'il faut demander !
         </p>
       </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script>
+      // Initialiser Three.js
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+      const renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+
+      // Charger l'image de ciel avec nuages pour l'arrière-plan
+      const skyTexture = new THREE.TextureLoader().load("assets/sky.webp"); // Remplacez par le chemin de l'image
+      scene.background = skyTexture;
+
+      // Créer la sphère lumineuse pour simuler le soleil
+      const sunGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+      const sunMaterial = new THREE.MeshBasicMaterial({
+        color: 0xffdd88,
+        emissive: 0xffdd88,
+      });
+      const sun = new THREE.Mesh(sunGeometry, sunMaterial);
+      scene.add(sun);
+
+      // Charger une texture de halo
+      const textureLoader = new THREE.TextureLoader();
+      const haloTexture = textureLoader.load("assets/halo.webp"); // Remplacez par le chemin réel de l'image du halo
+
+      // Créer un sprite pour simuler le halo autour du soleil
+      const haloMaterial = new THREE.SpriteMaterial({
+        map: haloTexture,
+        color: 0xffdd88,
+        transparent: true,
+        opacity: 0.6,
+      });
+      const halo = new THREE.Sprite(haloMaterial);
+      halo.scale.set(3, 3, 1); // Ajuste la taille du halo
+      scene.add(halo);
+
+      // Variables pour le mouvement du soleil
+      const sunDistance = 20; // Distance du soleil par rapport au centre
+      const sunSpeed = 0.1; // Vitesse du déplacement du soleil
+
+      // Positionner la caméra en recul pour observer le ciel
+      camera.position.set(0, 0, 30);
+
+      // Fonction d'animation
+      function animate() {
+        requestAnimationFrame(animate);
+
+        // Calcul de la position du soleil en cercle
+        const time = Date.now() * 0.0001;
+        const sunX = Math.cos(time * sunSpeed) * sunDistance;
+        const sunY = Math.sin(time * sunSpeed) * sunDistance;
+
+        // Mettre à jour les positions du soleil et du halo
+        sun.position.set(sunX, sunY, -10); // Place le soleil dans le ciel, derrière la caméra
+        halo.position.copy(sun.position); // Déplace le halo avec le soleil
+
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      // Redimensionnement de la scène
+      window.addEventListener("resize", () => {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+      });
+    </script>
   </body>
 </html>
