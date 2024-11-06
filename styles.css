@@ -37,6 +37,17 @@ h1 {
   margin-bottom: 50px;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.joke {
+  font-family: "itim", sans-serif !important;
+}
+
 /* Ajout d'un effet de bord déchiré en haut et en bas */
 .parchment::before,
 .parchment::after {
