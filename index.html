@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Saint Antoine</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
     <link rel="stylesheet" href="styles.css" />
 
     <link
@@ -282,7 +284,7 @@
         <p>
           En tout cas, depuis toujours j'avais une certitude absolue : prier
           c'est complètement inutile. Et bah je suis bien content de changer
-          d'avis, à 33 ans, je suis encore jeune ! La plupart des gens
+          d'avis, à 39 ans, je suis encore jeune ! La plupart des gens
           commencent à prier 5 minutes avant de mourir...
         </p>
         <p>
@@ -300,78 +302,62 @@
         </p>
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <audio
+      id="background-music"
+      src="assets/misere dei.mp3"
+      preload="auto"
+    ></audio>
+    <!-- Remplacez par le chemin de votre fichier audio -->
 
     <script>
-      // Initialiser Three.js
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(
-        75,
-        window.innerWidth / window.innerHeight,
-        0.1,
-        1000
-      );
-      const renderer = new THREE.WebGLRenderer({ antialias: true });
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      document.body.appendChild(renderer.domElement);
+      let musicStarted = false;
+      let musicPlaying = false;
 
-      // Charger l'image de ciel avec nuages pour l'arrière-plan
-      const skyTexture = new THREE.TextureLoader().load("assets/sky.webp"); // Remplacez par le chemin de l'image
-      scene.background = skyTexture;
-
-      // Créer la sphère lumineuse pour simuler le soleil
-      const sunGeometry = new THREE.SphereGeometry(0.5, 32, 32);
-      const sunMaterial = new THREE.MeshBasicMaterial({
-        color: 0xffdd88,
-        emissive: 0xffdd88,
-      });
-      const sun = new THREE.Mesh(sunGeometry, sunMaterial);
-      scene.add(sun);
-
-      // Charger une texture de halo
-      const textureLoader = new THREE.TextureLoader();
-      const haloTexture = textureLoader.load("assets/halo.webp"); // Remplacez par le chemin réel de l'image du halo
-
-      // Créer un sprite pour simuler le halo autour du soleil
-      const haloMaterial = new THREE.SpriteMaterial({
-        map: haloTexture,
-        color: 0xffdd88,
-        transparent: true,
-        opacity: 0.6,
-      });
-      const halo = new THREE.Sprite(haloMaterial);
-      halo.scale.set(3, 3, 1); // Ajuste la taille du halo
-      scene.add(halo);
-
-      // Variables pour le mouvement du soleil
-      const sunDistance = 20; // Distance du soleil par rapport au centre
-      const sunSpeed = 0.1; // Vitesse du déplacement du soleil
-
-      // Positionner la caméra en recul pour observer le ciel
-      camera.position.set(0, 0, 30);
-
-      // Fonction d'animation
-      function animate() {
-        requestAnimationFrame(animate);
-
-        // Calcul de la position du soleil en cercle
-        const time = Date.now() * 0.0001;
-        const sunX = Math.cos(time * sunSpeed) * sunDistance;
-        const sunY = Math.sin(time * sunSpeed) * sunDistance;
-
-        // Mettre à jour les positions du soleil et du halo
-        sun.position.set(sunX, sunY, -10); // Place le soleil dans le ciel, derrière la caméra
-        halo.position.copy(sun.position); // Déplace le halo avec le soleil
-
-        renderer.render(scene, camera);
+      // Fonction pour démarrer la musique
+      function startMusic() {
+        const audio = document.getElementById("background-music");
+        audio.play();
+        musicPlaying = true;
+        musicStarted = true;
       }
-      animate();
 
-      // Redimensionnement de la scène
-      window.addEventListener("resize", () => {
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
+      // Fonction pour arrêter/reprendre la musique sur desktop
+      function toggleMusic() {
+        const audio = document.getElementById("background-music");
+
+        if (musicPlaying) {
+          audio.pause(); // Met la musique en pause
+          musicPlaying = false;
+        } else {
+          audio.play(); // Reprend la musique
+          musicPlaying = true;
+        }
+      }
+
+      // Écoute l'événement de clic pour démarrer la musique
+      document.addEventListener("click", () => {
+        if (!musicStarted) {
+          startMusic();
+        }
+      });
+
+      // Écoute l'événement de touch pour mobile pour démarrer la musique
+      document.addEventListener(
+        "touchstart",
+        () => {
+          if (!musicStarted) {
+            startMusic();
+          }
+        },
+        { once: true }
+      );
+
+      // Écoute l'événement de touche pour arrêter/reprendre la musique avec espace uniquement sur desktop
+      document.addEventListener("keydown", (event) => {
+        if (event.code === "Space" && musicStarted) {
+          event.preventDefault();
+          toggleMusic();
+        }
       });
     </script>
   </body>

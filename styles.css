@@ -3,17 +3,9 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0;
-  background: linear-gradient(to bottom, #87ceeb, #b0e0e6);
   position: relative;
-}
-
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw; /* Couvre toute la largeur de la fenêtre */
-  height: 100vh; /* Couvre toute la hauteur de la fenêtre */
-  z-index: -1; /* Place le canvas derrière les autres éléments */
+  background: url("./assets/sky.webp") no-repeat center center fixed; /* Remplacez par le chemin de l'image */
+  background-size: cover;
 }
 
 h1 {
@@ -30,7 +22,11 @@ h1 {
 .parchment {
   max-width: 900px;
   padding: 40px;
-  background: linear-gradient(to bottom, #f0e6c8, #d8c7a3);
+  background: linear-gradient(
+    135deg,
+    rgba(240, 230, 200, 0.9),
+    rgba(218, 194, 154, 0.9)
+  );
   border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.15) inset;
   font-family: "Georgia", serif;
@@ -76,4 +72,14 @@ h1 {
   font-weight: 300;
   font-style: normal;
   font-size: 30px;
+}
+
+@media (max-width: 576px) {
+  .message-from {
+    font-size: 15px;
+  }
+
+  .message-to {
+    font-size: 13px;
+  }
 }
